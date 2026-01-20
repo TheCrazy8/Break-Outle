@@ -227,6 +227,9 @@ class GameManager:
         self.damage_upgrade_level = 0
         self.speed_upgrade_level = 0
         self.create_brick_grid()
+        
+        # Save after prestige
+        self.save_game()
     
     def update(self, dt):
         """Update game state"""
@@ -458,11 +461,13 @@ class GameManager:
             self.damage_upgrade_level = save_data.get('damage_upgrade_level', 0)
             self.speed_upgrade_level = save_data.get('speed_upgrade_level', 0)
             
-            # Respawn owned balls
+            # Respawn owned balls (with limit for performance)
+            MAX_BALLS_ON_LOAD = 50
             for ball_type, count in self.ball_counts.items():
                 if ball_type in BALL_TYPES:
                     type_data = BALL_TYPES[ball_type]
-                    for _ in range(count):
+                    balls_to_spawn = min(count, MAX_BALLS_ON_LOAD // len([c for c in self.ball_counts.values() if c > 0]) + 1)
+                    for _ in range(balls_to_spawn):
                         x = GAME_AREA_X + random.randint(100, GAME_AREA_WIDTH - 100)
                         y = GAME_AREA_Y + random.randint(100, GAME_AREA_HEIGHT - 100)
                         ball = Ball(x, y, ball_type, type_data,
