@@ -54,9 +54,9 @@ BUTTON_HEIGHT = 40
 BUTTON_PADDING = 10
 
 # Game balance
-INITIAL_GOLD = 0
-BRICK_BASE_HP = 5
-BRICK_HP_SCALING = 1.5  # HP multiplier per row
+INITIAL_GOLD = 20  # Start with some gold to buy first ball
+BRICK_BASE_HP = 2  # Lower HP so manual clicks work better
+BRICK_HP_SCALING = 1.3  # Less aggressive HP scaling
 BRICK_BASE_GOLD = 1
 MANUAL_CLICK_DAMAGE = 1
 PRESTIGE_THRESHOLD = 10000  # gold needed for first prestige

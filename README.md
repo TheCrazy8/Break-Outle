@@ -20,6 +20,16 @@ Break-Outle is a feature-rich remake of Idle Breakout, built with Python and Pyg
 - Pygame 2.5.0 or higher
 
 ## Installation
+
+### Option 1: Download Pre-built Executable (Recommended)
+Download the latest release for your platform from the [Releases](https://github.com/TheCrazy8/Break-Outle/releases) page:
+- **Windows**: `Break-Outle.exe`
+- **Linux**: `Break-Outle`
+- **macOS**: `Break-Outle`
+
+Just download and run!
+
+### Option 2: Run from Source
 1. Clone the repository:
 ```bash
 git clone https://github.com/TheCrazy8/Break-Outle.git
@@ -30,6 +40,20 @@ cd Break-Outle
 ```bash
 pip install -r requirements.txt
 ```
+
+3. Run the game:
+```bash
+python main.py
+```
+
+### Option 3: Build Your Own Executable
+1. Clone and install dependencies (see above)
+
+2. Build the executable:
+   - **Windows**: Run `build.bat` or `python build.py`
+   - **Linux/Mac**: Run `./build.sh` or `python build.py`
+
+3. Find your executable in the `dist/` directory
 
 ## How to Play
 Run the game:
@@ -76,3 +100,22 @@ Reset your progress to gain prestige points, which provide permanent bonuses:
 
 ## License
 MIT License
+
+## Development
+
+### Building
+This project uses PyInstaller to create standalone executables. The build process is automated via GitHub Actions, which creates executables for Windows, Linux, and macOS on every push.
+
+To build locally:
+```bash
+python build.py
+```
+
+The executable will be created in the `dist/` directory.
+
+### CI/CD
+The project uses GitHub Actions for continuous integration:
+- Automatically builds executables for all platforms on push
+- Creates releases with binaries when tags are pushed (e.g., `v1.0.0`)
+- Runs on Windows, Linux, and macOS runners
+

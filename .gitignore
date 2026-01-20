@@ -20,6 +20,9 @@ wheels/
 .installed.cfg
 *.egg
 
+# PyInstaller
+*.spec
+
 # Virtual Environment
 venv/
 env/
@@ -35,6 +38,11 @@ ENV/
 # Game saves
 saves/
 *.save
+game_save.json
+
+# Testing
+game_screenshot.png
+test_game.py
 
 # OS
 .DS_Store
