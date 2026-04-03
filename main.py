@@ -4,8 +4,8 @@ An overly complicated idle breakout game
 """
 import pygame
 import sys
-from game.game_manager import GameManager
-from game.constants import WINDOW_WIDTH, WINDOW_HEIGHT, FPS, GAME_TITLE
+from pygame.game_manager import GameManager
+from pygame.constants import WINDOW_WIDTH, WINDOW_HEIGHT, FPS, GAME_TITLE
 
 
 def main():
